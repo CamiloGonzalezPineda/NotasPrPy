@@ -1,0 +1,12 @@
+ENTREGA: Mini Proyecto “Gestor de Inventario Multiformato”
+Objetivo General
+Crear una aplicación modular en Python que gestione un inventario simple (productos) y permita:
+Registrar productos.
+Editarlos.
+Eliminarlos.
+Guardar y leer información desde:
+TXT
+JSON
+CSV
+Organizar el proyecto usando funciones (una por acción).
+Usar buenas prácticas: nombres claros, modularidad, manejo de errores, try/except, validaciones.
