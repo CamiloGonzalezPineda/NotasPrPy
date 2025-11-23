@@ -1,0 +1,90 @@
+NIVEL 1 — Comandos y conceptos esenciales que debes tener de memoria
+No es memorizar por memorizar. Es dominar los flujos reales que usas todos los días.
+🟦 A) Flujo de ramas
+Lo que haces el 90% del tiempo cuando trabajas con features:
+git branch              → listar ramas
+git branch <nombre>     → crear rama
+git checkout <nombre>   → moverte a la rama
+git switch <nombre>     → moverte a la rama (más moderno)
+git switch -c <nombre>  → crear y moverte a la vez
+git merge <rama>        → fusionar ramas
+🟩 B) Flujo de repositorios (local ↔ remoto)
+El ciclo natural de cualquier proyecto profesional:
+git clone <url>        → clonar repositorio
+git add <archivo>      → agregar cambios
+git add .              → agregar todo
+git commit -m "msg"    → guardar cambios
+git push               → subir cambios
+git pull               → traer actualizaciones del remoto
+🟨 C) Flujo de estado, revisión y corrección
+Para saber qué pasa y arreglar errores sin destruir el repositorio:
+git status             → ver qué ha cambiado
+git log                → historial de commits
+git diff               → ver diferencias entre versiones
+git stash              → guardar cambios temporalmente
+git stash pop          → recuperar cambios guardados
+git revert <commit>    → deshacer commit SIN borrar historial
+git reset <commit>     → mover puntero del repo (deshacer commits)
+Estos son los que sí o sí debes poder escribir de memoria.
+🔥 NIVEL 2 — Flujos mentales (lo que realmente importa)
+Aquí es donde piensas como un profesional.
+No piensas en comandos… piensas en qué quieres lograr, y el flujo te dice qué comando usar.
+🟦 Flujo 1: Quiero crear una nueva rama para trabajar
+Ver dónde estoy
+git branch
+Crear la rama
+git branch mi-rama
+Moverme a ella
+git switch mi-rama
+Trabajar normalmente
+git add .
+git commit -m "avance"
+Subirla al remoto por primera vez
+git push -u origin mi-rama
+🟩 Flujo 2: Quiero actualizar mi proyecto con cambios del remoto
+Traer cambios
+git pull
+Si hay conflictos
+Abrir archivos
+Resolver
+Guardar
+Commit si lo pide
+Seguir trabajando normalmente
+🟨 Flujo 3: Quiero fusionar mi trabajo con la rama principal
+Ir a main
+git switch main
+Traer últimas actualizaciones
+git pull
+Fusionar tu rama
+git merge mi-rama
+Subir cambios
+git push
+🟥 Flujo 4: Cometí un error y quiero volver atrás
+Caso 1: Solo quiero quitar lo que agregué al "stage"
+git reset archivo.ext
+Caso 2: Lo quiero deshacer todo sin miedo
+git checkout -- archivo.ext
+Caso 3: Me equivoqué en el último commit
+Sin borrar cambios:
+git reset --soft HEAD~1
+Borrando todo:
+git reset --hard HEAD~1
+🟫 Flujo 5: Tengo cambios pero necesito cambiar de rama YA
+Guardar temporalmente:
+git stash
+Luego volverlos a sacar:
+git stash pop
+⭐ Resumen de oro (lo mínimo para ser fluido)
+Si te aprendes solamente estos 10, ya trabajas sin miedo:
+git status
+git add .
+git commit -m ""
+git push
+git pull
+
+git branch
+git switch -c <rama>
+git merge <rama>
+
+git stash
+git reset / git revert
